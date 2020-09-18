@@ -4,6 +4,7 @@ package dmitr2ish.com.github.KafkaTesting.config;
 import dmitr2ish.com.github.KafkaTesting.dto.UserDto;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.LongSerializer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
@@ -18,7 +19,8 @@ import java.util.Map;
 @Configuration
 public class KafkaProducerConfig {
 
-    final private String kafkaServer = "localhost:9092";
+    @Value("${spring.kafka.bootstrap-servers}")
+    private String kafkaServer;
 
     @Bean
     public Map<String, Object> producerConfigs() {

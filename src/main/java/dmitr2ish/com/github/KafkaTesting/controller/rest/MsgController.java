@@ -24,8 +24,6 @@ public class MsgController {
     //this is the producer, he send message with "msg" topic, if this topic wasn't, it will be create automatically
     @PostMapping
     public void sendOrder(Long msgId, UserDto msg) {
-        msg.setAge(11L);
-        msg.setName("Dmitrii");
         msg.setAddress(new Address("Rus", "Msk", "Lenina", 9L, 9L));
         //it need for view the result of sending a message
         ListenableFuture<SendResult<Long, UserDto>> future = kafkaTemplate.send("msg", msgId, msg);
