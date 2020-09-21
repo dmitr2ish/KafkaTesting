@@ -11,6 +11,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 @SpringBootApplication
 public class KafkaTestingApplication {
 
+
+
 	@KafkaListener(topics="msg")
 	public void msgListener(ConsumerRecord<Long, UserDto> record) {
 		System.out.println("-= LISTENER by msg topic IS ACTIVE =-");
