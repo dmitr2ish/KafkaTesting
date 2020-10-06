@@ -50,17 +50,6 @@
                                         <div class="col-4">
                                             <form>
                                                 <div class="form-group text-center">
-                                                    <label for="addAge"
-                                                           class="font-weight-bold">Age
-                                                    </label>
-
-                                                    <input type="number"
-                                                           class="form-control"
-                                                           name="age"
-                                                           id="addAge">
-                                                </div>
-
-                                                <div class="form-group text-center">
                                                     <label for="addName"
                                                            class="font-weight-bold">Name
                                                     </label>
@@ -71,7 +60,71 @@
                                                            id="addName">
                                                 </div>
 
+                                                <div class="form-group text-center">
+                                                    <label for="addSurname"
+                                                           class="font-weight-bold">Surname
+                                                    </label>
 
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="surname"
+                                                           id="addSurname">
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <label for="addPassportSeries"
+                                                           class="font-weight-bold">Passport Series
+                                                    </label>
+
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           name="passportSeries"
+                                                           id="addPassportSeries">
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <label for="addpassportNumber"
+                                                           class="font-weight-bold">Passport Number
+                                                    </label>
+
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           name="passportNumber"
+                                                           id="addpassportNumber">
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <label for="addWhoIssuedPassport"
+                                                           class="font-weight-bold">Who Issued Passport
+                                                    </label>
+
+                                                    <input type="text"
+                                                           class="form-control"
+                                                           name="whoIssuedPassport"
+                                                           id="addWhoIssuedPassport">
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <label for="addWhenIssuedPassport"
+                                                           class="font-weight-bold">When Issued Passport
+                                                    </label>
+
+                                                    <input type="date"
+                                                           class="form-control"
+                                                           name="whenIssuedPassport"
+                                                           id="addWhenIssuedPassport">
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <label for="addDivisionCode"
+                                                           class="font-weight-bold">Division Code
+                                                    </label>
+
+                                                    <input type="number"
+                                                           class="form-control"
+                                                           name="divisionCode"
+                                                           id="addDivisionCode">
+                                                </div>
 
                                                 <div class="row justify-content-center">
                                                     <button type="submit" class="btn btn-success" id="save">Add new
@@ -114,8 +167,13 @@
         e.preventDefault();
 
         let user = {
-            age: $('#addAge').val(),
             name: $('#addName').val(),
+            surname: $('#addSurname').val(),
+            passportSeries: $('#addPassportSeries').val(),
+            passportNumber: $('#addpassportNumber').val(),
+            whoIssuedPassport: $('#addWhoIssuedPassport').val(),
+            whenIssuedPassport: $('#addWhenIssuedPassport').val(),
+            divisionCode: $('#addDivisionCode').val()
         }
 
         $.ajax({
@@ -126,8 +184,13 @@
             data: JSON.stringify(user),
             complete: function () {
                 $('.alert').toast('show');
-                $('#addAge').val("");
+                $('#addSurname').val("");
                 $('#addName').val("");
+                $('#addPassportSeries').val("");
+                $('#addpassportNumber').val("");
+                $('#addWhoIssuedPassport').val("");
+                $('#addWhenIssuedPassport').val("");
+                $('#addDivisionCode').val("");
             }
         })
     }

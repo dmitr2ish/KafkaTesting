@@ -2,9 +2,17 @@ package dmitr2ish.com.github.KafkaTesting.dto;
 
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 public class UserDto {
-    private Integer age;
     private String name;
-    private Information someinformation;
+    private String surname;
+    private Integer passportSeries;
+    private Integer passportNumber;
+    private String  whoIssuedPassport;
+    private LocalDate whenIssuedPassport;
+    private String divisionCode;
+    
+    
 }
