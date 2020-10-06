@@ -32,7 +32,7 @@ public class MsgController {
         UUID key = UUID.randomUUID();
         Map<UUID, String> msg = creatingXmlFormat(user, key);
         //it need for view the result of sending a message
-        ListenableFuture<SendResult<UUID, String>> future = kafkaTemplate.send("testServer1", key, msg.get(key));
+        ListenableFuture<SendResult<UUID, String>> future = kafkaTemplate.send("orderPassportRequestIn", key, msg.get(key));
         //addCalback have two parameters - SuccesCallback nad FailureCallback
         future.addCallback(System.out::println, System.err::println);
         kafkaTemplate.flush();

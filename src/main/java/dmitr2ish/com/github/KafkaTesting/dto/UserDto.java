@@ -13,6 +13,4 @@ public class UserDto {
     private String  whoIssuedPassport;
     private LocalDate whenIssuedPassport;
     private String divisionCode;
-    
-    
 }
